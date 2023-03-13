@@ -310,7 +310,7 @@ const npmPolyfillMap: Record<string, string> = {
 	process: "process-es6/browser.js",
 	punycode: "punycode/punycode.es6.js",
 	querystring: "querystring/index.js",
-	stream: "stream/index.js",
+	stream: "stream-browserify/index.js",
 	string_decoder: "string_decoder/lib/string_decoder.js",
 	sys: "util/util.js",
 	timers: "timers-browserify/main.js",
