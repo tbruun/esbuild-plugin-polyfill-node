@@ -302,7 +302,6 @@ const npmPolyfillMap: Record<string, string> = {
 	crypto: "crypto-browserify/index.js",
 	domain: "domain-browser/source/index.js",
 	events: "events/events.js",
-	fs: "browserify-fs/index.js",
 	http: "stream-http/index.js",
 	https: "stream-http/index.js",
 	os: "os-browserify/browser.js",

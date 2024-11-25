@@ -1,7 +1,7 @@
 {
 	"name": "@tbruun/esbuild-plugin-polyfill-node",
 	"private": false,
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"description": "ESBuild plugin for polyfilling Node.js builtins for edge and Deno",
 	"type": "module",
 	"exports": {
@@ -13,14 +13,14 @@
 	"sideEffects": false,
 	"types": "./dist/index.d.ts",
 	"scripts": {
-		"prepack": "rimraf dist && pnpm build",
+		"prepack": "rimraf dist && npm run build",
 		"build": "tsup",
 		"dev": "tsup --watch",
-		"test": "pnpm run test:typecheck && pnpm run test:lint && pnpm run test:prettier",
+		"test": "npm run test:typecheck && npm run test:lint && npm run test:prettier",
 		"test:typecheck": "tsc -p tsconfig.json --noEmit",
 		"test:lint": "eslint src --max-warnings 0",
-		"test:prettier": "prettier --check --ignore-path .gitignore --ignore-unknown . '!pnpm-lock.yaml'",
-		"format": "prettier . --write --ignore-path .gitignore --ignore-unknown . '!pnpm-lock.yaml'"
+		"test:prettier": "prettier --check --ignore-path .gitignore --ignore-unknown .",
+		"format": "prettier . --write --ignore-path .gitignore --ignore-unknown ."
 	},
 	"files": [
 		"dist",
@@ -53,7 +53,6 @@
 	"license": "MIT",
 	"dependencies": {
 		"assert": "^2.0.0",
-		"browserify-fs": "^1.0.0",
 		"browserify-zlib": "^0.2.0",
 		"buffer-es6": "^4.9.3",
 		"console-browserify": "^1.2.0",
@@ -77,13 +76,5 @@
 		"util": "^0.12.4",
 		"vm-browserify": "^1.1.2"
 	},
-	"packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee",
-	"pnpm": {
-		"overrides": {
-			"bl@<0.9.5": ">=0.9.5",
-			"bl@<1.2.3": ">=1.2.3",
-			"semver@<4.3.2": ">=4.3.2",
-			"semver@<5.7.2": ">=5.7.2"
-		}
-	}
+	"packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee"
 }
